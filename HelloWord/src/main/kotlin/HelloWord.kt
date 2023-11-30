@@ -1,3 +1,4 @@
 fun main (){
-    println("Hello Word")
+    val Ola: String = "Hello Word!"
+    println(Ola)
 }
