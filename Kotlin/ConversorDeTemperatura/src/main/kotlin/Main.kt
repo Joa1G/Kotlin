@@ -51,7 +51,7 @@ fun main() {
                 condicional = 1
             }
             else -> {
-                println("Erro! Adicione uma Escala Válida [C] [F] [K]: ")
+                print("Erro! Adicione uma Escala Válida [C] [F] [K]: ")
                  entrada = readln() // ler a entrada do usuário em String
                  escalaI = entrada[0] // atribui valor à variável Char passando o caractere na posição 0 da String
             }
