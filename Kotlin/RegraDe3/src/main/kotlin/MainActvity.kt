@@ -1,4 +1,5 @@
 // futuramente preciso melhorar esse programa com classes e arrays, mas ainda não sei
+//talvez substituir as variáveis val1GreatOne e etc por uma array
 fun main() {
     println("=================================")
     println("CALCULADORA DE REGRA DE 3 SIMPLES")
