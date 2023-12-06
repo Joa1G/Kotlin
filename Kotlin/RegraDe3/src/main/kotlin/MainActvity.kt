@@ -120,6 +120,11 @@ fun main() {
             }
         }
   }
-    println("O valor de 'X' é: $result")
+    val resultChange = String.format("%.2f", result)
+    if (v1G1 == 0.0 || v2G1 == 0.0) {
+        println("O valor de 'X' é: $resultChange $greatnessOne")
+    }else if (v1G2 == 0.0 || v2G2 == 0.0) {
+        println("O valor de 'X' é: $resultChange $greatnessTwo")
+    }
 
 }
