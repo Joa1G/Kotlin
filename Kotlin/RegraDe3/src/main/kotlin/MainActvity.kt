@@ -1,5 +1,7 @@
 // futuramente preciso melhorar esse programa com classes e arrays, mas ainda não sei
 //talvez substituir as variáveis val1GreatOne e etc por uma array
+//verificar automaticamente se é direta ou inversamente proporcional
+//previnir possíveis entradas inesperadas no programa
 fun main() {
     println("=================================")
     println("CALCULADORA DE REGRA DE 3 SIMPLES")
@@ -121,6 +123,7 @@ fun main() {
         }
   }
     val resultChange = String.format("%.2f", result)
+    // resultado personalizado conforme grandeza
     if (v1G1 == 0.0 || v2G1 == 0.0) {
         println("O valor de 'X' é: $resultChange $greatnessOne")
     }else if (v1G2 == 0.0 || v2G2 == 0.0) {
