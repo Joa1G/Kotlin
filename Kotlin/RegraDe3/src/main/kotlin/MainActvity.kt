@@ -1,9 +1,9 @@
-// futuramente preciso melhorar esse programa com classes e arrays, mas ainda não sei
-//talvez substituir as variáveis val1GreatOne e etc por uma array
+
 //verificar automaticamente se é direta ou inversamente proporcional
-//previnir entradas inesperadas de número e letra juntos
-fun String.containsNumber(): Boolean { // função pra identificar se a variável possui número.
-    return this.any { it.isDigit() }
+
+//função abaixo verifica se A String chamada possui caracteres letras
+fun String.containsLetters(): Boolean { // função pra identificar se a variável possui número.
+    return any { it.isLetter() }
 }
 fun main() {
     println("=================================")
@@ -26,11 +26,11 @@ fun main() {
     var val1GreatOne = readln()
 
     do {                                                              // repete enquanto as condições não forem atendidas
-        if (val1GreatOne != "X" && !val1GreatOne.containsNumber()) { // se variável diferente de X e não contém digito
+        if (val1GreatOne != "X" && val1GreatOne.containsLetters()) { // se variável diferente de X e contém letra
             print("VALOR INVÁLIDO! Digite novamente: ")
             val1GreatOne = readln()
         }
-    } while (val1GreatOne != "X" && !val1GreatOne.containsNumber())
+    } while (val1GreatOne != "X" && val1GreatOne.containsLetters())
 
     val v1G1: Double = if (val1GreatOne != "X"){
         val1GreatOne.toDouble()
@@ -41,21 +41,19 @@ fun main() {
     var val2GreatOne = readln()
 
     do {                                                              // repete enquanto as condições não forem atendidas
-        if (val2GreatOne != "X" && !val2GreatOne.containsNumber()) { // se variável diferente de X e não contém digito
+        if (val2GreatOne != "X" && val2GreatOne.containsLetters()) { // se variável diferente de X e contém letra
             print("VALOR INVÁLIDO! Digite novamente: ")
             val2GreatOne = readln()
         }
-    } while (val2GreatOne != "X" && !val2GreatOne.containsNumber())
+    } while (val2GreatOne != "X" && val2GreatOne.containsLetters())
 
+    /* se variável primária diferente de X transforma em double e coloca numa variável secundária,
+     se igual a X variável secundária recebe 0.0 */
     val v2G1: Double = if (val2GreatOne != "X"){
         val2GreatOne.toDouble()
     }else {
         0.0
     }
-    /*
-    verifica se alguma das duas variáveis estão vazias, se sim vai verificar qual e mostrar X no lugar dela
-    na sáida do código
-     */
 
     if (v1G1 == 0.0){
         println("OK, valor inicial da grandeza $greatnessOne: 'X' e final: $val2GreatOne")
@@ -70,11 +68,11 @@ fun main() {
     var val1GreatTwo = readln()
 
     do {                                                              // repete enquanto as condições não forem atendidas
-        if (val1GreatTwo != "X" && !val1GreatTwo.containsNumber()) { // se variável diferente de X e não contém digito
+        if (val1GreatTwo != "X" && val1GreatTwo.containsLetters()) { // se variável diferente de X e contém letras
             print("VALOR INVÁLIDO! Digite novamente: ")
             val1GreatTwo = readln()
         }
-    } while (val1GreatTwo != "X" && !val1GreatTwo.containsNumber())
+    } while (val1GreatTwo != "X" && val1GreatTwo.containsLetters())
 
     val v1G2: Double = if (val1GreatTwo != "X") {
         val1GreatTwo.toDouble()
@@ -86,28 +84,26 @@ fun main() {
     var val2GreatTwo = readln()
 
     do {                                                              // repete enquanto as condições não forem atendidas
-        if (val2GreatTwo != "X" && !val2GreatTwo.containsNumber()) { // se variável diferente de X e não contém digito
+        if (val2GreatTwo != "X" && val2GreatTwo.containsLetters()) { // se variável diferente de X e contém letras
             print("VALOR INVÁLIDO! Digite novamente: ")
             val2GreatTwo = readln()
         }
-    } while (val2GreatTwo != "X" && !val2GreatTwo.containsNumber())
+    } while (val2GreatTwo != "X" && val2GreatTwo.containsLetters())
 
+    /* se variável primária diferente de X transforma em double e coloca numa variável secundária,
+     se igual a X variável secundária recebe 0.0 */
     val v2G2: Double = if (val2GreatTwo != "X") {
         val2GreatTwo.toDouble()
     }else {
         0.0
     }
-    /*
-    verifica se alguma das duas variáveis estão vazias, se sim vai verificar qual e mostrar X no lugar dela
-    na sáida do código
-     */
 
     if (v1G2 == 0.0){
-        println("OK, valor inicial da grandeza $greatnessOne: 'X' e final: $val2GreatTwo")
+        println("OK, valor inicial da grandeza $greatnessTwo: 'X' e final: $val2GreatTwo")
     }else if (v2G2 == 0.0) {
-        println("OK, valor inicial da grandeza $greatnessOne: $val1GreatTwo e final: 'X' ")
+        println("OK, valor inicial da grandeza $greatnessTwo: $val1GreatTwo e final: 'X' ")
     }else {
-        println("OK, valor inicial da grandeza $greatnessOne: $val1GreatTwo e final: $val2GreatTwo")
+        println("OK, valor inicial da grandeza $greatnessTwo: $val1GreatTwo e final: $val2GreatTwo")
     }
 
     // calculos de diretamente proporcional e de inversamente proporcional
