@@ -1,24 +1,36 @@
 // futuramente preciso melhorar esse programa com classes e arrays, mas ainda não sei
 //talvez substituir as variáveis val1GreatOne e etc por uma array
 //verificar automaticamente se é direta ou inversamente proporcional
-//previnir possíveis entradas inesperadas no programa
+//previnir entradas inesperadas de número e letra juntos
+fun String.containsNumber(): Boolean { // função pra identificar se a variável possui número.
+    return this.any { it.isDigit() }
+}
 fun main() {
     println("=================================")
     println("CALCULADORA DE REGRA DE 3 SIMPLES")
     println("=================================")
+
     println("Utilize 'X' para a variável")
     print("1º Grandeza: ")
     val greatnessOne = readlnOrNull()
     print("2º Grandeza: ")
     val greatnessTwo = readlnOrNull()
     println("OK, temos a grandeza: '$greatnessOne' e a grandeza: '$greatnessTwo' ")
+
     println("Preciso saber se a grandeza é direta ou inversamente proporcional!")
     print("Para DIRETAMENTE [D] para INVERSAMENTE [I]: ")
     val dirOuInv = readln()
+
     println("Agora preciso de: ")
     print("Valor inicial da grandeza $greatnessOne: ")  //V1G1
-    // verifica se o valor da variável é "X" se for X, variável recebe vazio, senão recebe A string e converte pra Double
-    val val1GreatOne = readln()
+    var val1GreatOne = readln()
+
+    do {                                                              // repete enquanto as condições não forem atendidas
+        if (val1GreatOne != "X" && !val1GreatOne.containsNumber()) { // se variável diferente de X e não contém digito
+            print("VALOR INVÁLIDO! Digite novamente: ")
+            val1GreatOne = readln()
+        }
+    } while (val1GreatOne != "X" && !val1GreatOne.containsNumber())
 
     val v1G1: Double = if (val1GreatOne != "X"){
         val1GreatOne.toDouble()
@@ -26,8 +38,14 @@ fun main() {
         0.0
     }
     print("Valor final da grandeza $greatnessOne: ") //V2G1
-    // verifica se o valor da variável é "X" se for X, variável recebe vazio, senão recebe A string e converte pra Double
-    val val2GreatOne = readln()
+    var val2GreatOne = readln()
+
+    do {                                                              // repete enquanto as condições não forem atendidas
+        if (val2GreatOne != "X" && !val2GreatOne.containsNumber()) { // se variável diferente de X e não contém digito
+            print("VALOR INVÁLIDO! Digite novamente: ")
+            val2GreatOne = readln()
+        }
+    } while (val2GreatOne != "X" && !val2GreatOne.containsNumber())
 
     val v2G1: Double = if (val2GreatOne != "X"){
         val2GreatOne.toDouble()
@@ -49,8 +67,14 @@ fun main() {
 
     println("Por fim, preciso de: ")
     print("Valor inicial da grandeza $greatnessTwo: ") //V1G2
-    // verifica se o valor da variável é "X" se for X, variável recebe vazio, senão recebe A string e converte pra Double
-    val val1GreatTwo = readln()
+    var val1GreatTwo = readln()
+
+    do {                                                              // repete enquanto as condições não forem atendidas
+        if (val1GreatTwo != "X" && !val1GreatTwo.containsNumber()) { // se variável diferente de X e não contém digito
+            print("VALOR INVÁLIDO! Digite novamente: ")
+            val1GreatTwo = readln()
+        }
+    } while (val1GreatTwo != "X" && !val1GreatTwo.containsNumber())
 
     val v1G2: Double = if (val1GreatTwo != "X") {
         val1GreatTwo.toDouble()
@@ -59,8 +83,14 @@ fun main() {
     }
 
     print("Valor final da grandeza $greatnessTwo: ") //V2G2
-    // verifica se o valor da variável é "X" se for X, variável recebe vazio, senão recebe A string e converte pra Double
-    val val2GreatTwo = readln()
+    var val2GreatTwo = readln()
+
+    do {                                                              // repete enquanto as condições não forem atendidas
+        if (val2GreatTwo != "X" && !val2GreatTwo.containsNumber()) { // se variável diferente de X e não contém digito
+            print("VALOR INVÁLIDO! Digite novamente: ")
+            val2GreatTwo = readln()
+        }
+    } while (val2GreatTwo != "X" && !val2GreatTwo.containsNumber())
 
     val v2G2: Double = if (val2GreatTwo != "X") {
         val2GreatTwo.toDouble()
@@ -80,7 +110,7 @@ fun main() {
         println("OK, valor inicial da grandeza $greatnessOne: $val1GreatTwo e final: $val2GreatTwo")
     }
 
-    // calculos de diretamente proporcional e de inversamente proporcional(falta adicionar)
+    // calculos de diretamente proporcional e de inversamente proporcional
     /*
     tenho que verificar qual variável está vazia, se ela estiver vazia passa a receber o cálculo dos outros valores
     Diretamente {
