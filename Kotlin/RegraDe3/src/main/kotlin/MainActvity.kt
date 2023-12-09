@@ -1,6 +1,3 @@
-
-//verificar automaticamente se é direta ou inversamente proporcional
-
 //função abaixo verifica se A String chamada possui caracteres letras
 fun String.containsLetters(): Boolean { // função pra identificar se a variável possui número.
     return any { it.isLetter() }
@@ -19,8 +16,13 @@ fun main() {
 
     println("Preciso saber se a grandeza é direta ou inversamente proporcional!")
     print("Para DIRETAMENTE [D] para INVERSAMENTE [I]: ")
-    val dirOuInv = readln()
-
+    var dirOuInv = readln()
+    if (dirOuInv != "D" && dirOuInv != "I") { //previne entradas inesperadas(diferentes de D ou I)
+        do {
+            print("ERRO! Digite 'D' ou 'I' : ")
+            dirOuInv = readln()
+        }while (dirOuInv != "D" && dirOuInv != "I")
+    }
     println("Agora preciso de: ")
     print("Valor inicial da grandeza $greatnessOne: ")  //V1G1
     var val1GreatOne = readln()
