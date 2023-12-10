@@ -7,7 +7,7 @@ fun main() {
     var entrada = readln() // ler a entrada do usuário em String
     var escalaI: Char = entrada[0] // atribui valor à variável Char passando o caractere na posição 0 da String
 
-    var condicional: Int? = null
+    var condicional = 0
     do {
 
         when (escalaI) {
@@ -56,5 +56,5 @@ fun main() {
                  escalaI = entrada[0] // atribui valor à variável Char passando o caractere na posição 0 da String
             }
         }
-    } while (condicional == null)
+    } while (condicional == 0)
 }
