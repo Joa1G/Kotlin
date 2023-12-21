@@ -15,14 +15,14 @@ fun regraDe3Simples(){
     }
     print("Valor inicial da grandeza $greatnessOne: ")  //V1G1
     var val1GreatOne = readln()
-    var storageOfX = 0
-    if (val1GreatOne == "X") storageOfX = 1
+    var hasXSaved = 0
+    if (val1GreatOne == "X") hasXSaved = 1
 
     do {                                                              // repete enquanto as condições não forem atendidas
         if (val1GreatOne != "X" && val1GreatOne.containsLetters()) { // se variável diferente de X e contém letra
             print("VALOR INVÁLIDO! Digite novamente: ")
             val1GreatOne = readln()
-            if (val1GreatOne == "X") storageOfX = 1
+            if (val1GreatOne == "X") hasXSaved = 1
         }
     } while (val1GreatOne != "X" && val1GreatOne.containsLetters())
 
@@ -33,9 +33,9 @@ fun regraDe3Simples(){
     }
     print("Valor final da grandeza $greatnessOne: ") //V2G1
     var val2GreatOne = readln()
-    if (val2GreatOne == "X" && storageOfX == 0){
-        storageOfX = 1
-    }else if (storageOfX == 1){
+    if (val2GreatOne == "X" && hasXSaved == 0){
+        hasXSaved = 1
+    }else if (hasXSaved == 1){
         do {
             print("Não podem haver 2 variáveis 'X', Digite novamente: ")
             val2GreatOne = readln()
@@ -46,9 +46,9 @@ fun regraDe3Simples(){
         if (val2GreatOne != "X" && val2GreatOne.containsLetters()) { // se variável diferente de X e contém letra
             print("VALOR INVÁLIDO! Digite novamente: ")
             val2GreatOne = readln()
-            if (val2GreatOne == "X" && storageOfX == 0){
-                storageOfX = 1
-            }else if (storageOfX == 1){
+            if (val2GreatOne == "X" && hasXSaved == 0){
+                hasXSaved = 1
+            }else if (hasXSaved == 1){
                 do {
                     print("Não podem haver 2 variáveis 'X', Digite novamente: ")
                     val2GreatOne = readln()
@@ -74,9 +74,9 @@ fun regraDe3Simples(){
     }
     print("Valor inicial da grandeza $greatnessTwo: ") //V1G2
     var val1GreatTwo = readln()
-    if (val1GreatTwo == "X" && storageOfX == 0){
-        storageOfX = 1
-    }else if (storageOfX == 1){
+    if (val1GreatTwo == "X" && hasXSaved == 0){
+        hasXSaved = 1
+    }else if (hasXSaved == 1){
         do {
             print("Não podem haver 2 variáveis 'X', Digite novamente: ")
             val1GreatTwo = readln()
@@ -87,9 +87,9 @@ fun regraDe3Simples(){
         if (val1GreatTwo != "X" && val1GreatTwo.containsLetters()) { // se variável diferente de X e contém letras
             print("VALOR INVÁLIDO! Digite novamente: ")
             val1GreatTwo = readln()
-            if (val1GreatTwo == "X" && storageOfX == 0){
-                storageOfX = 1
-            }else if (storageOfX == 1){
+            if (val1GreatTwo == "X" && hasXSaved == 0){
+                hasXSaved = 1
+            }else if (hasXSaved == 1){
                 do {
                     print("Não podem haver 2 variáveis 'X', Digite novamente: ")
                     val1GreatTwo = readln()
@@ -106,9 +106,9 @@ fun regraDe3Simples(){
 
     print("Valor final da grandeza $greatnessTwo: ") //V2G2
     var val2GreatTwo = readln()
-    if (val2GreatTwo == "X" && storageOfX == 0){
-        storageOfX = 1
-    }else if (storageOfX == 1){
+    if (val2GreatTwo == "X" && hasXSaved == 0){
+        hasXSaved = 1
+    }else if (hasXSaved == 1){
         do {
             print("Não podem haver 2 variáveis 'X', Digite novamente: ")
             val2GreatTwo = readln()
@@ -119,9 +119,9 @@ fun regraDe3Simples(){
         if (val2GreatTwo != "X" && val2GreatTwo.containsLetters()) { // se variável diferente de X e contém letras
             print("VALOR INVÁLIDO! Digite novamente: ")
             val2GreatTwo = readln()
-            if (val2GreatTwo == "X" && storageOfX == 0){
-                storageOfX = 1
-            }else if (storageOfX == 1){
+            if (val2GreatTwo == "X" && hasXSaved == 0){
+                hasXSaved = 1
+            }else if (hasXSaved == 1){
                 do {
                     print("Não podem haver 2 variáveis 'X', Digite novamente: ")
                     val2GreatTwo = readln()
