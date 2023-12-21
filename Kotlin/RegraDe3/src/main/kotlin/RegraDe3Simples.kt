@@ -182,3 +182,4 @@ fun regraDe3Simples(){
 fun String.containsLetters(): Boolean { // função pra identificar se a variável possui número.
     return any { it.isLetter() }
 }
+
