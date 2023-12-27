@@ -6,18 +6,21 @@ fun main() {
     println("Para regra de 3 composta [2]")
     print(":")
     var pick = readln().toInt()
+    var control = 0
     do {
         when (pick) {
             1 -> {
                 regraDe3Simples()
+                control = 1
             }
             2 -> {
                 regraDe3Composta()
+                control = 1
             }
             else -> {
                 print("Escolha inválida, escolha novamente: ")
                 pick = readln().toInt()
             }
         }
-    }while (pick != 1 && pick != 2)
+    }while (control == 0)
 }

@@ -1,6 +1,7 @@
+//fazer aceitar x minusculo támbem
 fun regraDe3Simples(){
-    println("   REGRA DE 3 SIMPLES  ")
-    println("Utilize 'X' para a variável")
+    println("    REGRA DE 3 SIMPLES   ")
+
     print("1º Grandeza: ")
     val greatnessOne = readlnOrNull()
     print("2º Grandeza: ")
@@ -13,6 +14,7 @@ fun regraDe3Simples(){
             dirOuInv = readln()
         }while (dirOuInv != "D" && dirOuInv != "I")
     }
+    println("Utilize 'X' para a variável")
     print("Valor inicial da grandeza $greatnessOne: ")  //V1G1
     var val1GreatOne = readln()
     var hasXSaved = 0
@@ -35,7 +37,7 @@ fun regraDe3Simples(){
     var val2GreatOne = readln()
     if (val2GreatOne == "X" && hasXSaved == 0){
         hasXSaved = 1
-    }else if (hasXSaved == 1){
+    }else if (val2GreatOne == "X"){
         do {
             print("Não podem haver 2 variáveis 'X', Digite novamente: ")
             val2GreatOne = readln()
@@ -48,7 +50,7 @@ fun regraDe3Simples(){
             val2GreatOne = readln()
             if (val2GreatOne == "X" && hasXSaved == 0){
                 hasXSaved = 1
-            }else if (hasXSaved == 1){
+            }else if (hasXSaved == 1 && val2GreatOne == "X"){
                 do {
                     print("Não podem haver 2 variáveis 'X', Digite novamente: ")
                     val2GreatOne = readln()
@@ -76,7 +78,7 @@ fun regraDe3Simples(){
     var val1GreatTwo = readln()
     if (val1GreatTwo == "X" && hasXSaved == 0){
         hasXSaved = 1
-    }else if (hasXSaved == 1){
+    }else if (val1GreatTwo == "X"){
         do {
             print("Não podem haver 2 variáveis 'X', Digite novamente: ")
             val1GreatTwo = readln()
@@ -89,7 +91,7 @@ fun regraDe3Simples(){
             val1GreatTwo = readln()
             if (val1GreatTwo == "X" && hasXSaved == 0){
                 hasXSaved = 1
-            }else if (hasXSaved == 1){
+            }else if (hasXSaved == 1 && val1GreatTwo == "X"){
                 do {
                     print("Não podem haver 2 variáveis 'X', Digite novamente: ")
                     val1GreatTwo = readln()
@@ -108,7 +110,7 @@ fun regraDe3Simples(){
     var val2GreatTwo = readln()
     if (val2GreatTwo == "X" && hasXSaved == 0){
         hasXSaved = 1
-    }else if (hasXSaved == 1){
+    }else if (val2GreatTwo == "X"){
         do {
             print("Não podem haver 2 variáveis 'X', Digite novamente: ")
             val2GreatTwo = readln()
@@ -121,7 +123,7 @@ fun regraDe3Simples(){
             val2GreatTwo = readln()
             if (val2GreatTwo == "X" && hasXSaved == 0){
                 hasXSaved = 1
-            }else if (hasXSaved == 1){
+            }else if (hasXSaved == 1 && val2GreatTwo == "X"){
                 do {
                     print("Não podem haver 2 variáveis 'X', Digite novamente: ")
                     val2GreatTwo = readln()
@@ -178,8 +180,3 @@ fun regraDe3Simples(){
         println("O valor de 'X' é: $resultChange $greatnessTwo")
     }
 }
-//função abaixo verifica se A String chamada possui caracteres letras
-fun String.containsLetters(): Boolean { // função pra identificar se a variável possui número.
-    return any { it.isLetter() }
-}
-
