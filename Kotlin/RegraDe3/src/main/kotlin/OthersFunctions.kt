@@ -17,8 +17,3 @@ fun List<Double>.mult(): Double{
     }
     return accumulator
 }
-/*
-fun String.notContainsNumbers(): Boolean {
-    val number = this.toDoubleOrNull()
-    return number == null
-}*/

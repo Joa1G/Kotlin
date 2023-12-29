@@ -28,38 +28,41 @@ fun regraDe3Composta() {
     val startValuesOfGreatness: MutableList<Any> = mutableListOf()
     val finalValuesOfGreatness: MutableList<Any> = mutableListOf()
 
-    println("Digite o nome dado a cada grandeza: ")
     for (i in 0..<numGreatness) {
 
-        print("${i + 1}º grandeza: ")
+        print("Digite o nome da ${i + 1}º grandeza: ")
         nameGreatness.add(readln())
 
-        println("Utilize 'X' para grandeza!")
+        println("Utilize 'X' para a variável!")
 
         print("Valor inicial de ${nameGreatness[i]} : ")
         var sVG = readln()
+        if (sVG == "x") sVG = sVG.uppercase()
         if (sVG == "X") {
-            startValuesOfGreatness.add(sVG.uppercase())
+            startValuesOfGreatness.add(sVG)
         } else if (sVG.containsLetters()) {
             do {
                 print("ERRO! valor inválido, Digite novamente: ")
                 sVG = readln()
+                if (sVG == "x") sVG= sVG.uppercase()
             } while (sVG.containsLetters() && sVG != "X")
-            if (sVG != "X") startValuesOfGreatness.add(sVG.toDouble()) else startValuesOfGreatness.add(sVG.uppercase())
+            if (sVG != "X") startValuesOfGreatness.add(sVG.toDouble()) else startValuesOfGreatness.add(sVG)
         } else {
             startValuesOfGreatness.add(sVG.toDouble())
         }
 
         print("Valor final de ${nameGreatness[i]} : ")
         var fVG = readln()
+        if (fVG == "x") fVG = fVG.uppercase()
         if (fVG == "X") {
-            finalValuesOfGreatness.add(fVG.uppercase())
+            finalValuesOfGreatness.add(fVG)
         } else if (fVG.containsLetters()) {
             do {
                 print("ERRO! valor inválido, Digite novamente: ")
                 fVG = readln()
+                if (fVG == "x") fVG = fVG.uppercase()
             } while (fVG.containsLetters() && fVG != "X")
-            if (fVG != "X") finalValuesOfGreatness.add(fVG.toDouble()) else finalValuesOfGreatness.add(fVG.uppercase())
+            if (fVG != "X") finalValuesOfGreatness.add(fVG.toDouble()) else finalValuesOfGreatness.add(fVG)
         } else {
             finalValuesOfGreatness.add(fVG.toDouble())
         }
@@ -80,25 +83,27 @@ fun regraDe3Composta() {
     startValuesOfGreatness[indexProduct] = finalValuesOfGreatness[indexProduct]
     finalValuesOfGreatness[indexProduct] = storageOfStartGreatnessValue
 
-    var lineOfX = ""
-    if (hasX(startValuesOfGreatness) == "Have") {
-        lineOfX = "SVG"
-    } else if (hasX(startValuesOfGreatness) == "Don't Have") {
-        lineOfX = "FVG"
+    val lineOfX = if (hasX(startValuesOfGreatness) == "Have") "SVG" else "FVG"
+
+    val indexOfX = if (hasX(startValuesOfGreatness) == "Have") {
+        startValuesOfGreatness.indexOf("X")
+    } else {
+        finalValuesOfGreatness.indexOf("X")
     }
+
     val multiplicationOfFirstLine: Double
     val multiplicationOfSecondLine: Double
-    var result: Double? = null
+    val result: Double
     if (lineOfX == "SVG") {
         startValuesOfGreatness.remove("X")
         multiplicationOfFirstLine = ((startValuesOfGreatness.map { it.toString() }).map { it.toDouble() }).mult()
         multiplicationOfSecondLine = ((finalValuesOfGreatness.map { it.toString() }).map { it.toDouble() }).mult()
         result = (multiplicationOfSecondLine / multiplicationOfFirstLine)
-    } else if (lineOfX == "FVG") {
+    } else {
         finalValuesOfGreatness.remove("X")
         multiplicationOfSecondLine = ((finalValuesOfGreatness.map { it.toString() }).map { it.toDouble() }).mult()
         multiplicationOfFirstLine = ((startValuesOfGreatness.map { it.toString() }).map { it.toDouble() }).mult()
-        result = multiplicationOfFirstLine / multiplicationOfSecondLine
+        result = (multiplicationOfFirstLine / multiplicationOfSecondLine)
     }
-    println("O valor de 'X' é: $result")
+    println("O valor de 'X' é: $result ${nameGreatness[indexOfX]}")
 }

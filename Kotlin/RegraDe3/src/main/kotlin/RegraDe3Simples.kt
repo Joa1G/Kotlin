@@ -1,11 +1,10 @@
-//fazer aceitar x minusculo támbem
 fun regraDe3Simples(){
     println("    REGRA DE 3 SIMPLES   ")
 
     print("1º Grandeza: ")
-    val greatnessOne = readlnOrNull()
+    val greatnessOne = readln()
     print("2º Grandeza: ")
-    val greatnessTwo = readlnOrNull()
+    val greatnessTwo = readln()
     print("Para DIRETAMENTE [D] para INVERSAMENTE [I]: ")
     var dirOuInv = readln()
     if (dirOuInv != "D" && dirOuInv != "I") { //previne entradas inesperadas(diferentes de D ou I)
@@ -14,16 +13,20 @@ fun regraDe3Simples(){
             dirOuInv = readln()
         }while (dirOuInv != "D" && dirOuInv != "I")
     }
+
+    var hasXSaved = 0
     println("Utilize 'X' para a variável")
     print("Valor inicial da grandeza $greatnessOne: ")  //V1G1
     var val1GreatOne = readln()
-    var hasXSaved = 0
+    if (val1GreatOne == "x") val1GreatOne = val1GreatOne.uppercase()
+
     if (val1GreatOne == "X") hasXSaved = 1
 
     do {                                                              // repete enquanto as condições não forem atendidas
-        if (val1GreatOne != "X" && val1GreatOne.containsLetters()) { // se variável diferente de X e contém letra
+        if (val1GreatOne != "X" && val1GreatOne.containsLetters()) { // se variável diferente de X e não for número
             print("VALOR INVÁLIDO! Digite novamente: ")
             val1GreatOne = readln()
+            if (val1GreatOne == "x") val1GreatOne = val1GreatOne.uppercase()
             if (val1GreatOne == "X") hasXSaved = 1
         }
     } while (val1GreatOne != "X" && val1GreatOne.containsLetters())
@@ -35,25 +38,29 @@ fun regraDe3Simples(){
     }
     print("Valor final da grandeza $greatnessOne: ") //V2G1
     var val2GreatOne = readln()
+    if (val2GreatOne == "x") val2GreatOne = val2GreatOne.uppercase()
     if (val2GreatOne == "X" && hasXSaved == 0){
         hasXSaved = 1
     }else if (val2GreatOne == "X"){
         do {
             print("Não podem haver 2 variáveis 'X', Digite novamente: ")
             val2GreatOne = readln()
+            if (val2GreatOne == "x") val2GreatOne = val2GreatOne.uppercase()
         }while (val2GreatOne == "X")
     }
 
     do {                                                              // repete enquanto as condições não forem atendidas
-        if (val2GreatOne != "X" && val2GreatOne.containsLetters()) { // se variável diferente de X e contém letra
+        if (val2GreatOne != "X" && val2GreatOne.containsLetters()) { // se variável diferente de X e não for número
             print("VALOR INVÁLIDO! Digite novamente: ")
             val2GreatOne = readln()
+            if (val2GreatOne == "x") val2GreatOne = val2GreatOne.uppercase()
             if (val2GreatOne == "X" && hasXSaved == 0){
                 hasXSaved = 1
             }else if (hasXSaved == 1 && val2GreatOne == "X"){
                 do {
                     print("Não podem haver 2 variáveis 'X', Digite novamente: ")
                     val2GreatOne = readln()
+                    if (val2GreatOne == "x") val2GreatOne = val2GreatOne.uppercase()
                 }while (val2GreatOne == "X")
             }
         }
@@ -76,12 +83,14 @@ fun regraDe3Simples(){
     }
     print("Valor inicial da grandeza $greatnessTwo: ") //V1G2
     var val1GreatTwo = readln()
+    if (val1GreatTwo == "x") val1GreatTwo = val1GreatTwo.uppercase()
     if (val1GreatTwo == "X" && hasXSaved == 0){
         hasXSaved = 1
     }else if (val1GreatTwo == "X"){
         do {
             print("Não podem haver 2 variáveis 'X', Digite novamente: ")
             val1GreatTwo = readln()
+            if (val1GreatTwo == "x") val1GreatTwo = val1GreatTwo.uppercase()
         }while (val1GreatTwo == "X")
     }
 
@@ -89,12 +98,14 @@ fun regraDe3Simples(){
         if (val1GreatTwo != "X" && val1GreatTwo.containsLetters()) { // se variável diferente de X e contém letras
             print("VALOR INVÁLIDO! Digite novamente: ")
             val1GreatTwo = readln()
+            if (val1GreatTwo == "x") val1GreatTwo = val1GreatTwo.uppercase()
             if (val1GreatTwo == "X" && hasXSaved == 0){
                 hasXSaved = 1
             }else if (hasXSaved == 1 && val1GreatTwo == "X"){
                 do {
                     print("Não podem haver 2 variáveis 'X', Digite novamente: ")
                     val1GreatTwo = readln()
+                    if (val1GreatTwo == "x") val1GreatTwo = val1GreatTwo.uppercase()
                 }while (val1GreatTwo == "X")
             }
         }
@@ -108,12 +119,15 @@ fun regraDe3Simples(){
 
     print("Valor final da grandeza $greatnessTwo: ") //V2G2
     var val2GreatTwo = readln()
+    if (val2GreatTwo == "x") val2GreatTwo = val2GreatTwo.uppercase()
+
     if (val2GreatTwo == "X" && hasXSaved == 0){
         hasXSaved = 1
     }else if (val2GreatTwo == "X"){
         do {
             print("Não podem haver 2 variáveis 'X', Digite novamente: ")
             val2GreatTwo = readln()
+            if (val2GreatTwo == "x") val2GreatTwo = val2GreatTwo.uppercase()
         }while (val2GreatTwo == "X")
     }
 
@@ -121,12 +135,15 @@ fun regraDe3Simples(){
         if (val2GreatTwo != "X" && val2GreatTwo.containsLetters()) { // se variável diferente de X e contém letras
             print("VALOR INVÁLIDO! Digite novamente: ")
             val2GreatTwo = readln()
+            if (val2GreatTwo == "x") val2GreatTwo = val2GreatTwo.uppercase()
+
             if (val2GreatTwo == "X" && hasXSaved == 0){
                 hasXSaved = 1
             }else if (hasXSaved == 1 && val2GreatTwo == "X"){
                 do {
                     print("Não podem haver 2 variáveis 'X', Digite novamente: ")
                     val2GreatTwo = readln()
+                    if (val2GreatTwo == "x") val2GreatTwo = val2GreatTwo.uppercase()
                 }while (val2GreatTwo == "X")
             }
         }
